@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>QlikSense.NetSDK</id>
+    <version>3.1.2.0</version>
+    <title>Qlik Sense .Net SDK</title>
+    <authors>QlikTech International AB</authors>
+    <owners>QlikTech International AB</owners>
+    <licenseUrl>http://www.qlik.com/us/legal/license-terms</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Qlik Sense .NET SDK is a development toolbox for embedding Qlik Sense into host application programs developed by software manufacturers on an OEM basis.</description>
+    <summary>Connect to a Qlik Sense engine and use the .NET framework API to build a Qlik Sense app from scratch or to embed Qlik Sense objects in client applications.</summary>
+    <copyright>Copyright ©2016 QlikTech International AB, All Rights Reserved</copyright>
+    <tags>qlik sense</tags>
+    <dependencies>
+      <dependency id="Autofac" version="3.5.2" />
+      <dependency id="Newtonsoft.Json" version="6.0.8" />
+    </dependencies>
+    <references>
+      <reference file="BouncyCastle.CryptoExt.dll" />
+      <reference file="Qlik.Sense.Communication.dll" />
+      <reference file="Qlik.Sense.JsonRpc.dll" />
+      <reference file="Qlik.Engine.dll" />
+      <reference file="Qlik.Sense.Client.dll" />
+      <reference file="Qlik.Engine.Extensions.dll" />
+      <reference file="Qlik.Engine.Extensions.WinForms.dll" />
+    </references>
+  </metadata>
+</package>

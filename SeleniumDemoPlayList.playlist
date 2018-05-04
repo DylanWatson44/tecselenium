@@ -1,0 +1,5 @@
+<Playlist Version="1.0">
+<Add Test="Partsunlimited.UITests.TestClass1.Method_02" />
+<Add Test="Partsunlimited.UITests.TestClass1.Number_of_learners" />
+<Add Test="Partsunlimited.UITests.TestClass1.Volume_of_Delivery" />
+</Playlist>

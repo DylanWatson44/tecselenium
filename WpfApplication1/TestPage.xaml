@@ -1,0 +1,33 @@
+﻿<Controls:MetroWindow x:Class="WpfApplication1.TestPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="TEC KPI Test program" Height="487" Width="470">
+    <ScrollViewer Height="Auto" Width="Auto" 
+                  HorizontalScrollBarVisibility="Auto" 
+                  VerticalScrollBarVisibility="Auto">
+        <Grid Name="mygrid2">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="173*" />
+            <ColumnDefinition Width="210*" />
+            <ColumnDefinition Width="79*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="27" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="TitleBlock2" Grid.ColumnSpan="3" TextAlignment="Left">Calculating results...</TextBlock>
+        <Controls:MetroProgressBar IsIndeterminate="True" Grid.Row="7" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Name="myProgressBar2" Margin="5,0,10,0" Height="6" Grid.Column="0" >
+            <ToolTipService.ToolTip>
+                <ToolTip Grid.Row="1" Grid.Column="0" Content="This is a progress bar put here solely because it looks nice and lets you know that the program hasn't crashed (probably)" />
+            </ToolTipService.ToolTip>
+        </Controls:MetroProgressBar>
+    </Grid>
+    </ScrollViewer>
+</Controls:MetroWindow>
