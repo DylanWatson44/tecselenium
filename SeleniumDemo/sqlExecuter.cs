@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SeleniumDemo
@@ -10,7 +8,7 @@ namespace SeleniumDemo
     class sqlExecuter
     {
         private List<QueryObject> myQueries;
-        private string constr = "Data Source=adc-uat-dw01;Initial Catalog=Master;Integrated Security=SSPI;";
+        private string connectionstring = "Data Source=adc-uat-dw01;Initial Catalog=Master;Integrated Security=SSPI;";  //should be changed so that Data Source is a variable
         private List<string> rowdata;
 
         public sqlExecuter(List<QueryObject> queries)
@@ -20,13 +18,8 @@ namespace SeleniumDemo
 
         public void executeQueries()
         {
-        //    public List<string> executeQueries()
-        //{
             rowdata = new List<string>();
-
-
-
-            using (SqlConnection connection = new SqlConnection(constr))
+            using (SqlConnection connection = new SqlConnection(connectionstring))
             {
                 connection.Open();
                 foreach (QueryObject q in myQueries)
@@ -39,7 +32,7 @@ namespace SeleniumDemo
                     bool task1completion = false;
                     var task1 = Task.Run(() =>
                     {
-                        SeleniumDemo.spinner.ConsoleSpiner spin = new SeleniumDemo.spinner.ConsoleSpiner();
+                        spinner.ConsoleSpiner spin = new spinner.ConsoleSpiner();
                         //Console.WriteLine("Working....");
                         while (!task1completion)
                         {

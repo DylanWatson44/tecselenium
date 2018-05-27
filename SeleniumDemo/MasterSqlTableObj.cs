@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumDemo
 {
-    class MasterSqlTableObj
+    public class MasterSqlTableObj
     {
         public List<KPIpage> KPIpages = new List<KPIpage>();
 
@@ -22,6 +18,13 @@ namespace SeleniumDemo
         public bool updateOverride = false;
         public string lastignore;
 
+        /// <summary>
+        /// The MasterSqlTable is responsible for doing the initial retrieval of all the kpi
+        ///  values and updating when last they were tested
+        /// </summary>
+        /// <param name="devprod"></param>
+        /// <param name="Override"></param>
+        /// <param name="filterlist"></param>
         public MasterSqlTableObj(string devprod, bool Override, List<int> filterlist)
         {
             updateOverride = Override;
@@ -63,12 +66,13 @@ namespace SeleniumDemo
                                 valueToRead = DevOrProd == "Dev" ? 8 : 9;
 
                                 string url = reader.GetString(urlToRead);
+                                string appname = reader.GetString(1);
 
                                 //if the list of urls does not already have this url, add the url to 
                                 //our list and make a new list of queryobjects to associate to it in the dictionary
                                 if (!Urls.Contains(url))
                                 {
-                                    KPIpage page = new KPIpage(url);
+                                    KPIpage page = new KPIpage(url, appname);
                                    // Console.WriteLine("New Url found, filling dictionary with queries");
                                     Urls.Add(url);
                                     KPIpages.Add(page);
@@ -176,7 +180,6 @@ namespace SeleniumDemo
                     SqlTransaction transaction;
                     transaction = connection.BeginTransaction("A transaction");
                     command.Transaction = transaction;
-                    //command.CommandType = System.Data.CommandType.StoredProcedure;
                     command.ExecuteNonQuery();
 
                     command.Transaction.Commit();

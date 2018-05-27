@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumDemo
 {
     class spinner
     {
+        /// <summary>
+        /// This class makes a simple animation in the console window to let the user know that things are still running
+        /// </summary>
         public class ConsoleSpiner
         {
             int counter;
@@ -29,16 +27,12 @@ namespace SeleniumDemo
                     case 5: Console.Write("  >>"); break;
                     case 6: Console.Write("   >"); break;
                     case 7: Console.Write("    "); break;
-
                 }
-                if (!Console.IsOutputRedirected /*&& Console.CursorLeft - 1 >= 0*/)
+                if (!Console.IsOutputRedirected)
                 {
-                    //Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                     Console.SetCursorPosition(0, Console.CursorTop);
                 }
                 System.Threading.Thread.Sleep(60);
-
-            
             }
         }
     }

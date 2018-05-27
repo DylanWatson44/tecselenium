@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SeleniumDemo
 {
-    class KPIpage
+    public class KPIpage
     {
         private string url;
+        private string appName;
         private List<QueryObject> KPIs;
 
-        public KPIpage(string vurl)
+        public KPIpage(string vurl, string vname)
         {
             url = vurl;
+            appName = vname;
             KPIs = new List<QueryObject>();
         }
 
@@ -28,6 +26,10 @@ namespace SeleniumDemo
         public string getUrl()
         {
             return url;
+        }
+        public string getAppName()
+        {
+            return appName;
         }
     }
 }

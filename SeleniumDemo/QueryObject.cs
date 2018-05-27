@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumDemo
 {
-   public class QueryObject
+    /// <summary>
+    /// Class representing all the values associated with a sql query needed for our kpi test
+    /// </summary>
+    public class QueryObject
     {
         private string QueryName;
         private string QueryCommand;
@@ -16,13 +15,13 @@ namespace SeleniumDemo
         private int testID;
         private string actualValue;
         private bool passed;
-        public event EventHandler<CustomEventArgs> resultReturnedEvent;
+        public event EventHandler<TestResultEvent> resultReturnedEvent;
 
         public QueryObject(string QC, string QT, string QN, int ID)
         {
-            QueryName = QN;
             QueryCommand = QC;
             QueryType = QT;
+            QueryName = QN;
             testID = ID;
         }
         public string getQueryName()
@@ -84,23 +83,25 @@ namespace SeleniumDemo
         public void setPassed(bool b)
         {
             passed = b;
-            OnRaiseCustomEvent(new CustomEventArgs(b));
+            OnRaiseCustomEvent(new TestResultEvent(b));
         }
-        protected virtual void OnRaiseCustomEvent(CustomEventArgs e)
+        protected virtual void OnRaiseCustomEvent(TestResultEvent e)
         {
-            EventHandler<CustomEventArgs> handler = resultReturnedEvent;
+            EventHandler<TestResultEvent> handler = resultReturnedEvent;
             if(handler != null)
-            {
+            {      
                 handler(this, e);
             }
         }
     }
 
-    //a class to hold custom event info
-    public class CustomEventArgs : EventArgs
+    /// <summary>
+    /// A class to return the result of a test in the form of a boolean: result.
+    /// </summary>
+    public class TestResultEvent : EventArgs
     {
         private bool result;
-        public CustomEventArgs(bool res)
+        public TestResultEvent(bool res)
         {
             result = res;
         }
@@ -109,5 +110,4 @@ namespace SeleniumDemo
             return result;
         }
     }
-   // public delegate void CustomEventHandler(object sender, CustomEventArgs a);
 }

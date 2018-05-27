@@ -131,11 +131,9 @@
   <ItemGroup>
     <Compile Include="KPIpage.cs" />
     <Compile Include="MasterSqlTableObj.cs" />
-    <Compile Include="SeleniumObject.cs" />
     <Compile Include="spinner.cs" />
     <Compile Include="seleniumClass.cs" />
     <Compile Include="sqlExecuter.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryObject.cs" />
   </ItemGroup>
@@ -145,7 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="capture_dHo_icon.ico" />
-    <Content Include="readme.txt" />
+    <Content Include="SeleniumLibReadme.txt" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="MSDAOSP">
