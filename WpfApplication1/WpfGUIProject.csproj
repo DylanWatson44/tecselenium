@@ -86,10 +86,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TestPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,9 +96,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestPage.xaml.cs">
-      <DependentUpon>TestPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -138,9 +131,9 @@
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SeleniumDemo\SeleniumDemo.csproj">
+    <ProjectReference Include="..\SeleniumDemo\SeleniumProject.csproj">
       <Project>{59f9600f-9692-4a73-bdb6-86db20a7fb5a}</Project>
-      <Name>SeleniumDemo</Name>
+      <Name>SeleniumProject</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +150,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\unsure2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tec.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\baskets.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
