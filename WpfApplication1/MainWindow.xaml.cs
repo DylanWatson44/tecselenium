@@ -92,7 +92,7 @@ namespace WpfApplication1
             if (UsernameBox.Text == "" && PasswordBox.Password == "")
             {
                 user = "dwatson";
-                pass = "1silverfireNEW!";
+                pass = "1silverfireNEW@";
             }
             else
             {

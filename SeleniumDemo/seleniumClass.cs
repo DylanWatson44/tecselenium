@@ -17,7 +17,7 @@ namespace SeleniumDemo
         // private string seleniumPath = "C:\\xInstall\\Selenium\\SeleniumTestOutput\\";
         private string baseURL;
         private static string user = "dwatson"; //tec\\dwatson
-        private static string password = "1silverfireNEW!";
+        private static string password = "1silverfireNEW@";
         //private string driverType; // should be "browser" or "headless"
         public RemoteWebDriver webdriver;
         private WebDriverWait wait;
@@ -175,7 +175,7 @@ namespace SeleniumDemo
             watch.Stop();
             Console.WriteLine(pagesPassed + " out of " + pagesTested + " passed.");
             Console.WriteLine("Total time elapsed= {0}", watch.Elapsed);
-            mySelenium.webdriver.Quit();
+            //mySelenium.webdriver.Quit();
             //if(pagesPassed == pagesTested)
             //{
             //    return true;
